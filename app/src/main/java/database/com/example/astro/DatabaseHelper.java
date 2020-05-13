@@ -19,8 +19,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
 
     //     Table Name
-    public static final String COMMON_TABLE_NAME = "COMMON";
-    public static final String PRESENT_TABLE_NAME = "PRESENT";
+    public static final String COMMON_TABLE_NAME = "COMMON_TABLE_NAME";
+    public static final String PRESENT_TABLE_NAME = "PRESENT_TABLE_NAME";
     public static final String SECOND_DAY_TABLE_NAME = "SECOND_DAY_TABLE_NAME";
     public static final String THIRD_DAY_TABLE_NAME = "THIRD_DAY_TABLE_NAME";
 
@@ -57,9 +57,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //     Creating table query
     private static final String CREATE_COMMON_TABLE_NAME =
             "create table" + " " + COMMON_TABLE_NAME + "("
-                    + CITY_ID + " " + "TEXT,"
+                    + CITY_ID + " " + "INTEGER,"
                     + NAME + " " + "TEXT,"
-//                    + DATE_OF_INSERT + " " + "date,"
                     + LAT + " " + "INTEGER,"
                     + LON + " " + "INTEGER,"
                     + COUNTRY + " " + "TEXT,"
@@ -67,7 +66,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_PRESENT_TABLE_NAME =
             "create table" + " " + PRESENT_TABLE_NAME + "("
-                    + CITY_ID + " " + "TEXT,"
+                    + CITY_ID + " " + "INTEGER,"
                     + SUNRISE + " " + "INTEGER,"
                     + SUNSET + " " + "INTEGER,"
                     + DT_TXT + " " + "TEXT,"
@@ -87,7 +86,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_SECOND_DAY_TABLE_NAME =
             "create table" + " " + SECOND_DAY_TABLE_NAME + "("
-                    + CITY_ID + " " + "TEXT,"
+                    + CITY_ID + " " + "INTEGER,"
                     + SUNRISE + " " + "INTEGER,"
                     + SUNSET + " " + "INTEGER,"
                     + DT_TXT + " " + "TEXT,"
@@ -107,7 +106,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String CREATE_THIRD_DAY_TABLE_NAME =
             "create table" + " " + THIRD_DAY_TABLE_NAME + "("
-                    + CITY_ID + " " + "TEXT,"
+                    + CITY_ID + " " + "INTEGER,"
                     + SUNRISE + " " + "INTEGER,"
                     + SUNSET + " " + "INTEGER,"
                     + DT_TXT + " " + "TEXT,"
@@ -125,35 +124,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                     + WIND_SPEED + " " + "INTEGER,"
                     + WIND_DEG + " " + "INTEGER);";
 
-
-
-//    private static final String CREATE_TABLE =
-//            "create table" + " " + TABLE_NAME + "("
-//                    + _ID + " " + "INTEGER PRIMARY KEY AUTOINCREMENT,"
-//                    + CITY_ID + " " + "TEXT,"
-//                    + NAME + " " + "TEXT,"
-////                    + DATE_OF_INSERT + " " + "date,"
-//                    + LAT + " " + "INTEGER,"
-//                    + LON + " " + "INTEGER,"
-//                    + COUNTRY + " " + "TEXT,"
-//                    + TIMEZONE + " " + "INTEGER,"
-//                    + SUNRISE + " " + "INTEGER,"
-//                    + SUNSET + " " + "INTEGER,"
-//                    + DT_TXT + " " + "TEXT,"
-//                    + TEMPERATURE + " " + "INTEGER,"
-//                    + FEELS_LIKE + " " + "INTEGER,"
-//                    + TEMP_MIN + " " + "INTEGER,"
-//                    + TEMP_MAX + " " + "INTEGER,"
-//                    + PRESSURE + " " + "INTEGER,"
-//                    + HUMIDITY + " " + "INTEGER,"
-//                    + SEA_LEVEL + " " + "INTEGER,"
-//                    + GRND_LEVEL + " " + "INTEGER,"
-//                    + WEATHER_MAIN + " " + "TEXT,"
-//                    + WEATHER_DESCRIPTION + " " + "TEXT,"
-//                    + WEATHER_ICON + " " + "TEXT,"
-//                    + WIND_SPEED + " " + "INTEGER,"
-//                    + WIND_DEG + " " + "INTEGER);";
-
     //    This takes the Context (e.g., an Activity)
     public DatabaseHelper(@Nullable Context context) {
 //        When the application runs the first time – At this point, we do not yet have a database.
@@ -164,10 +134,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 //        Execute a single SQL statement that is NOT a SELECT or any other SQL statement that returns data.
-        db.execSQL(COMMON_TABLE_NAME);
-        db.execSQL(PRESENT_TABLE_NAME);
-        db.execSQL(SECOND_DAY_TABLE_NAME);
-        db.execSQL(THIRD_DAY_TABLE_NAME);
+        db.execSQL(CREATE_COMMON_TABLE_NAME);
+        db.execSQL(CREATE_PRESENT_TABLE_NAME);
+        db.execSQL(CREATE_SECOND_DAY_TABLE_NAME);
+        db.execSQL(CREATE_THIRD_DAY_TABLE_NAME);
     }
 
     @Override

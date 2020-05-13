@@ -69,14 +69,14 @@ public class Request {
             int sunrise = city.getInt("sunrise");
             int sunset = city.getInt("sunset");
 
-            common.put("ID", id);
-            common.put("NAME", name);
-            common.put("LAT", lat);
-            common.put("LON", lon);
-            common.put("COUNTRY", country);
-            common.put("TIMEZONE", timezone);
-            common.put("SUNRISE", sunrise);
-            common.put("SUNSET", sunset);
+            common.put(DatabaseHelper.CITY_ID, id);
+            common.put(DatabaseHelper.NAME, name);
+            common.put(DatabaseHelper.LAT, lat);
+            common.put(DatabaseHelper.LON, lon);
+            common.put(DatabaseHelper.COUNTRY, country);
+            common.put(DatabaseHelper.TIMEZONE, timezone);
+            common.put(DatabaseHelper.SUNRISE, sunrise);
+            common.put(DatabaseHelper.SUNSET, sunset);
 
             present = parseOneDay(response, 0);
 
@@ -100,9 +100,6 @@ public class Request {
         } catch (JSONException e) {
             Log.e("Reqest.java", "parseResponse Error");
             Log.e("Request.java", e.getMessage());
-        } catch (Exception ex) {
-            Log.e("Reqest.java", "parseOneDay Error");
-            Log.e("Request.java", ex.getMessage());
         }
     }
 
@@ -155,21 +152,21 @@ public class Request {
             int speed = wind.getInt("speed");
             int deg = wind.getInt("deg");
 
-            contentValues.put("ID", id);
-            contentValues.put("DT_TXT", dtTxt);
-            contentValues.put("TEMP", temp);
-            contentValues.put("FEELS_LIKE", feelsLike);
-            contentValues.put("TEMP_MIN", tempMin);
-            contentValues.put("TEMP_MAX", tempMax);
-            contentValues.put("PRESSURE", pressure);
-            contentValues.put("SEA_LEVEL", seaLevel);
-            contentValues.put("GRND_LEVEL", grndLevel);
-            contentValues.put("HUMIDITY", humidity);
-            contentValues.put("WEATHER_MAIN", weatherMain);
-            contentValues.put("WEATHER_DESCRIPTION", weatherDescription);
-            contentValues.put("WEATHER_ICON", weatherIcon);
-            contentValues.put("SPEED", speed);
-            contentValues.put("DEG", deg);
+            contentValues.put(DatabaseHelper.CITY_ID, id);
+            contentValues.put(DatabaseHelper.DT_TXT, dtTxt);
+            contentValues.put(DatabaseHelper.TEMPERATURE, temp);
+            contentValues.put(DatabaseHelper.FEELS_LIKE, feelsLike);
+            contentValues.put(DatabaseHelper.TEMP_MIN, tempMin);
+            contentValues.put(DatabaseHelper.TEMP_MAX, tempMax);
+            contentValues.put(DatabaseHelper.PRESSURE, pressure);
+            contentValues.put(DatabaseHelper.SEA_LEVEL, seaLevel);
+            contentValues.put(DatabaseHelper.GRND_LEVEL, grndLevel);
+            contentValues.put(DatabaseHelper.HUMIDITY, humidity);
+            contentValues.put(DatabaseHelper.WEATHER_MAIN, weatherMain);
+            contentValues.put(DatabaseHelper.WEATHER_DESCRIPTION, weatherDescription);
+            contentValues.put(DatabaseHelper.WEATHER_ICON, weatherIcon);
+            contentValues.put(DatabaseHelper.WIND_SPEED, speed);
+            contentValues.put(DatabaseHelper.WIND_DEG, deg);
 
         } catch (JSONException e) {
             e.printStackTrace();

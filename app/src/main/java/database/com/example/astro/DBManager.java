@@ -43,32 +43,8 @@ public class DBManager {
         return newRowId;
     }
 
-    //    Read information from a database
-    public Cursor fetchIDDate(String TABLE_NAME) {
-//        Define a projection that specifies which columns from the database
-//     you will actually use after this query.
-        String[] projection = {
-                DatabaseHelper.CITY_ID,
-                DatabaseHelper.DT_TXT
-        };
-
-        Cursor cursor = database.query(
-                TABLE_NAME,                     // The table to query
-                projection,                     // The array of columns to return (pass null to get all)
-                null,                   // The columns for the WHERE clause
-                null,               // The values for the WHERE clause
-                null,                   // don't group the rows
-                null,                   // don't filter by row groups
-                DatabaseHelper.CITY_ID + " ASC"                    // The sort order
-        );
-
-        if (cursor != null) {
-            cursor.moveToFirst();
-        }
-        return cursor;
-    }
-
-    public Cursor fetchWhereID(long id, String TABLE_NAME) {
+    public Cursor fetchIDS(String TABLE_NAME) {
+        //TODO: jaksi null reference..
         String[] projection = {
                 DatabaseHelper.CITY_ID
         };
@@ -76,8 +52,8 @@ public class DBManager {
         Cursor cursor = database.query(
                 TABLE_NAME,      // The table to query
                 projection,                     // The array of columns to return (pass null to get all)
-                DatabaseHelper.CITY_ID + "=?",                   // The columns for the WHERE clause
-                new String[] { String.valueOf(id) },               // The values for the WHERE clause
+                null,                   // The columns for the WHERE clause
+                null,               // The values for the WHERE clause
                 null,                   // don't group the rows
                 null,                   // don't filter by row groups
                 null                    // The sort order

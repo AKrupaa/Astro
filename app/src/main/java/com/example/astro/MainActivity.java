@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
                             UtilAstro utilAstro = new UtilAstro();
                             utilAstro.fetchFromDatabaseAndUpdateViewModel(finalSCity, getApplicationContext(), sharedViewModel);
 
+                            // przejdz do instancji
                         }
                     }
                 });

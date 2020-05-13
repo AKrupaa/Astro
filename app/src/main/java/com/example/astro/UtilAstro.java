@@ -18,7 +18,8 @@ public class UtilAstro {
 //    if exist returning true otherwise false
     static boolean isCityExistInDB(long cityID, Context context) {
         DBManager dbManager = new DBManager(context);
-        Cursor cursor = dbManager.fetchWhereID(cityID, DatabaseHelper.COMMON_TABLE_NAME);
+        String whatever = DatabaseHelper.COMMON_TABLE_NAME;
+        Cursor cursor = dbManager.fetchIDS(whatever);
 
         for (; !cursor.isAfterLast(); cursor.moveToNext()) {
             if (cursor.getLong(cursor.getColumnIndex(DatabaseHelper.CITY_ID)) == cityID) {

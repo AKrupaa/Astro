@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">AstroWeather</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+
+    <string name="nameOfCity">Miasto</string>
+    <string name="longitude">Długość geograficzna</string>
+    <string name="latitude">Szerokość geograficzna</string>
+    <string name="hintlongitude">dlugosc geograficzna</string>
+    <string name="hintLatitude">szerokosc geograficzna</string>
+    <string name="hintCity">miasto</string>
+    <string name="confirm">Zatwierdź</string>
+
+    <string name="timeBetweenCalculations">Czas pomiędzy obliczeniami</string>
+
+    <string name="moonRise">moonRise: czas</string>
+    <string name="moonSet">moonSet: czas</string>
+    <string name="nearestNewMoon">NearestNewMoon: data</string>
+    <string name="nearestFullMoon">NearestFullMoon: data</string>
+    <string name="phaseOfTheMoon">PhaseOfTheMoon: procent</string>
+    <string name="synodicMonthDay">SynodicMonthDay: day</string>
+
+    <string name="sunRise">SunRise: czas</string>
+    <string name="sunRiseAzimuth">sunRiseAzimuth: azymut</string>
+    <string name="sunSet">SunSet: czas</string>
+    <string name="sunSetAzimuth">sunSetAzimuth: azymut</string>
+    <string name="sunTwilight">sunTwilight: czas</string>
+    <string name="sunCivilDawn">sunCivilDawn: czas</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="autoSizeMinTextSize">5sp</dimen>
+    <dimen name="autoSizeMaxTextSize">100sp</dimen>
+    <dimen name="autoSizeStepGranularity">2sp</dimen>
+
+    <dimen name="autoSizeMinTextSizeSimple">10sp</dimen>
+    <dimen name="autoSizeMaxTextSizeSimple">40sp</dimen>
+
+</resources>

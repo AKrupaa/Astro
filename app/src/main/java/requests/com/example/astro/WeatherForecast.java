@@ -30,8 +30,28 @@ public class WeatherForecast {
                         sharedViewModel.setSecondDay(secondDay);
                         sharedViewModel.setThirdDay(thirdDay);
 
-                        // jezeli dzis jest rozny
+                        // jezeli istnieje w bazie taki rekord -> aktualizuj
+                        // inaczej dodaj.
 
+                        long fetchedCityID = common.getAsLong(DatabaseHelper.CITY_ID);
+                        DBManager dbManager = new DBManager(context);
+                        dbManager.open();
+
+                        if(UtilAstro.isCityExistInDB(fetchedCityID, context)) {
+                            // update
+                            dbManager.update(fetchedCityID, DatabaseHelper.COMMON_TABLE_NAME, common);
+                            dbManager.update(fetchedCityID, DatabaseHelper.PRESENT_TABLE_NAME, present);
+                            dbManager.update(fetchedCityID, DatabaseHelper.SECOND_DAY_TABLE_NAME, secondDay);
+                            dbManager.update(fetchedCityID, DatabaseHelper.THIRD_DAY_TABLE_NAME, thirdDay);
+                        } else {
+                            // add
+                            dbManager.insertToTable(DatabaseHelper.COMMON_TABLE_NAME, common);
+                            dbManager.insertToTable(DatabaseHelper.PRESENT_TABLE_NAME, present);
+                            dbManager.insertToTable(DatabaseHelper.SECOND_DAY_TABLE_NAME, secondDay);
+                            dbManager.insertToTable(DatabaseHelper.THIRD_DAY_TABLE_NAME, thirdDay);
+                        }
+
+                        dbManager.close();
                         onSavedResponse.onSaved();
                     }
                 });

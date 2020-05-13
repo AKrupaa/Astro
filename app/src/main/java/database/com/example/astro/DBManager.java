@@ -69,9 +69,13 @@ public class DBManager {
     }
 
     public Cursor fetchWhereID(long id, String TABLE_NAME) {
+        String[] projection = {
+                DatabaseHelper.CITY_ID
+        };
+
         Cursor cursor = database.query(
                 TABLE_NAME,      // The table to query
-                null,                     // The array of columns to return (pass null to get all)
+                projection,                     // The array of columns to return (pass null to get all)
                 DatabaseHelper.CITY_ID + "=?",                   // The columns for the WHERE clause
                 new String[] { String.valueOf(id) },               // The values for the WHERE clause
                 null,                   // don't group the rows
@@ -80,6 +84,45 @@ public class DBManager {
         );
 
 //        Cursor findEntry = db.query("sku_table", columns, "owner=? and price=?", new String[] { owner, price }, null, null, null);
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
+    public Cursor fetchWhereName(String name, String TABLE_NAME) {
+
+        String[] projection = {
+                DatabaseHelper.NAME
+        };
+
+        Cursor cursor = database.query(
+                TABLE_NAME,      // The table to query
+                projection,                     // The array of columns to return (pass null to get all)
+                DatabaseHelper.NAME + "=?",                   // The columns for the WHERE clause
+                new String[] { name },               // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                null                    // The sort order
+        );
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
+    public Cursor fetchAllWhereName(String name, String TABLE_NAME) {
+        Cursor cursor = database.query(
+                TABLE_NAME,      // The table to query
+                null,                     // The array of columns to return (pass null to get all)
+                DatabaseHelper.NAME + "=?",                   // The columns for the WHERE clause
+                new String[] { name },               // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                null                    // The sort order
+        );
 
         if (cursor != null) {
             cursor.moveToFirst();

@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.astro.DatabaseHelper;
 
@@ -21,13 +22,14 @@ public class MainActivity extends AppCompatActivity {
     private Button confirm;
     private Button force;
     private WeatherForecast weatherForecast;
+    private SharedViewModel sharedViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        SharedViewModel sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
+        sharedViewModel = new ViewModelProvider(this).get(SharedViewModel.class);
         weatherForecast = new WeatherForecast(getApplicationContext(), sharedViewModel);
         initialization();
 
@@ -47,7 +49,35 @@ public class MainActivity extends AppCompatActivity {
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // sprawdz datebase
+                // pobieraj, nie patyczkuj się
+                String sCity = city.getText().toString();
+                sCity = sCity.replaceAll(" ", "");
+
+                final String finalSCity = sCity;
+                weatherForecast.saveInternetWeatherContentInViewModel(sCity, new WeatherForecast.onSavedResponse() {
+                    @Override
+                    public void onSaved() {
+                        // przejdz do nowej intencji
+                    }
+
+                    @Override
+                    public void onFailed() {
+                        // sprobuj baze danych
+                        // nie -> blad
+                        // tak -> przejdz
+                        long cityID = UtilAstro.isCityExistInDB(finalSCity, getApplicationContext());
+                        if(cityID < 0) {
+                            Toast.makeText(getApplicationContext(), "Offline: brak danych", Toast.LENGTH_SHORT).show();
+                        } else {
+                            // umiesc dane w ViewModel
+                            // pobierz dane z bazy i dopiero zaaktualizuj
+                            UtilAstro utilAstro = new UtilAstro();
+                            utilAstro.fetchFromDatabaseAndUpdateViewModel(finalSCity, getApplicationContext(), sharedViewModel);
+
+                        }
+                    }
+                });
+
             }
         });
     }
@@ -64,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
                     //zablokuj ekran
                     @Override
                     public void onSaved() {
-                        // zrob cos.
+                        // do dypozycji SharedViewModel
                         Intent intent = new Intent();
 
                         // odblokuj ekran
@@ -74,6 +104,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onFailed() {
                         // odblokuj ekran
                         // zglos blad jakis tam dodatkowy. kurwa nie wiem, wymysl cos
+                        Toast.makeText(getApplicationContext(), "Sprawdz dane/Polaczenie z Internetem", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

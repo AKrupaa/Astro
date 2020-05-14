@@ -69,8 +69,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_PRESENT_TABLE_NAME =
             "create table" + " " + PRESENT_TABLE_NAME + "("
                     + CITY_ID + " " + "INTEGER,"
-                    + SUNRISE + " " + "INTEGER,"
-                    + SUNSET + " " + "INTEGER,"
                     + DT_TXT + " " + "TEXT,"
                     + TEMPERATURE + " " + "INTEGER,"
                     + FEELS_LIKE + " " + "INTEGER,"
@@ -89,8 +87,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_SECOND_DAY_TABLE_NAME =
             "create table" + " " + SECOND_DAY_TABLE_NAME + "("
                     + CITY_ID + " " + "INTEGER,"
-                    + SUNRISE + " " + "INTEGER,"
-                    + SUNSET + " " + "INTEGER,"
                     + DT_TXT + " " + "TEXT,"
                     + TEMPERATURE + " " + "INTEGER,"
                     + FEELS_LIKE + " " + "INTEGER,"
@@ -109,8 +105,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String CREATE_THIRD_DAY_TABLE_NAME =
             "create table" + " " + THIRD_DAY_TABLE_NAME + "("
                     + CITY_ID + " " + "INTEGER,"
-                    + SUNRISE + " " + "INTEGER,"
-                    + SUNSET + " " + "INTEGER,"
                     + DT_TXT + " " + "TEXT,"
                     + TEMPERATURE + " " + "INTEGER,"
                     + FEELS_LIKE + " " + "INTEGER,"

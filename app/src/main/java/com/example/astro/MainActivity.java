@@ -19,8 +19,8 @@ import com.example.astro.DatabaseHelper;
 public class MainActivity extends AppCompatActivity {
 
     private EditText city;
-    private EditText lon;
-    private EditText lat;
+//    private EditText lon;
+//    private EditText lat;
     private Button confirm;
     private Button force;
     private WeatherForecast weatherForecast;
@@ -43,8 +43,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initialization() {
         city = (EditText) findViewById(R.id.city);
-        lon = (EditText) findViewById(R.id.inputedLongitude);
-        lat = (EditText) findViewById(R.id.inputedLatitude);
         confirm = (Button) findViewById(R.id.buttonConfirm);
         force = (Button) findViewById(R.id.buttonForce);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -75,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
                         hideProgressBar();
                         // Navigate from MainActivity to OverviewActivity
                         Intent intent = new Intent(MainActivity.this, OverviewActivity.class);
+                        intent.putExtra(DatabaseHelper.CITY_ID, sharedViewModel.getCommon().getAsLong(DatabaseHelper.CITY_ID));
                         startActivity(intent);
                     }
 
@@ -97,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
                             hideProgressBar();
                             // Navigate from MainActivity to OverviewActivity
                             Intent intent = new Intent(MainActivity.this, OverviewActivity.class);
+                            intent.putExtra(DatabaseHelper.CITY_ID, sharedViewModel.getCommon().getAsLong(DatabaseHelper.CITY_ID));
                             startActivity(intent);
                         }
                     }
@@ -123,6 +123,7 @@ public class MainActivity extends AppCompatActivity {
                         hideProgressBar();
                         // Navigate from MainActivity to OverviewActivity
                         Intent intent = new Intent(MainActivity.this, OverviewActivity.class);
+                        intent.putExtra(DatabaseHelper.CITY_ID, sharedViewModel.getCommon().getAsLong(DatabaseHelper.CITY_ID));
                         startActivity(intent);
                     }
 

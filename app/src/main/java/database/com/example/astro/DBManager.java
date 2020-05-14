@@ -43,8 +43,7 @@ public class DBManager {
         return newRowId;
     }
 
-    public Cursor fetchIDS(String TABLE_NAME) {
-        //TODO: jaksi null reference..
+    public Cursor fetchIDs(String TABLE_NAME) {
         String[] projection = {
                 DatabaseHelper.CITY_ID
         };
@@ -67,17 +66,35 @@ public class DBManager {
         return cursor;
     }
 
-    public Cursor fetchWhereName(String name, String TABLE_NAME) {
+    public Cursor fetchNames(String TABLE_NAME) {
 
         String[] projection = {
-                DatabaseHelper.NAME
+                DatabaseHelper.NAME,
+                DatabaseHelper.CITY_ID
         };
 
         Cursor cursor = database.query(
                 TABLE_NAME,      // The table to query
                 projection,                     // The array of columns to return (pass null to get all)
-                DatabaseHelper.NAME + "=?",                   // The columns for the WHERE clause
-                new String[] { name },               // The values for the WHERE clause
+                null,                   // The columns for the WHERE clause
+                null,               // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                null                    // The sort order
+        );
+
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+        return cursor;
+    }
+
+    public Cursor fetchAllWhereID(long id, String TABLE_NAME) {
+        Cursor cursor = database.query(
+                TABLE_NAME,      // The table to query
+                null,                     // The array of columns to return (pass null to get all)
+                DatabaseHelper.CITY_ID + "=?",                   // The columns for the WHERE clause
+                new String[] { String.valueOf(id) },               // The values for the WHERE clause
                 null,                   // don't group the rows
                 null,                   // don't filter by row groups
                 null                    // The sort order

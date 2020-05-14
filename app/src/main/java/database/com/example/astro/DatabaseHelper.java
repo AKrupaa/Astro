@@ -13,20 +13,20 @@ import androidx.annotation.Nullable;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //     Database Information
-    private static final String DB_NAME = "WEATHER.DB";
+    private static final String DB_NAME = "NEW_WEATHER.DB";
 
     //     database version
     private static final int DB_VERSION = 1;
 
     //     Table Name
-    public static final String COMMON_TABLE_NAME = "COMMON_TABLE_NAME";
+    public static final String BRAND_NEW_COMMON_TABLE_NAME = "ReallyBrandNewCommon";
     public static final String PRESENT_TABLE_NAME = "PRESENT_TABLE_NAME";
     public static final String SECOND_DAY_TABLE_NAME = "SECOND_DAY_TABLE_NAME";
     public static final String THIRD_DAY_TABLE_NAME = "THIRD_DAY_TABLE_NAME";
 
     //     Table columns
 
-    public static final String _ID = "_id";
+//    public static final String _ID = "_id";
 
     // COMMON
     public static final String CITY_ID = "CITY_ID";
@@ -56,13 +56,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     //     Creating table query
     private static final String CREATE_COMMON_TABLE_NAME =
-            "create table" + " " + COMMON_TABLE_NAME + "("
+            "create table" + " " + BRAND_NEW_COMMON_TABLE_NAME + "("
                     + CITY_ID + " " + "INTEGER,"
                     + NAME + " " + "TEXT,"
                     + LAT + " " + "INTEGER,"
                     + LON + " " + "INTEGER,"
                     + COUNTRY + " " + "TEXT,"
-                    + TIMEZONE + " " + "INTEGER);";
+                    + TIMEZONE + " " + "INTEGER,"
+                    + SUNRISE + " " + "INTEGER,"
+                    + SUNSET + " " + "INTEGER);";
 
     private static final String CREATE_PRESENT_TABLE_NAME =
             "create table" + " " + PRESENT_TABLE_NAME + "("
@@ -143,7 +145,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 //        Execute a single SQL statement that is NOT a SELECT or any other SQL statement that returns data.
-        db.execSQL("DROP TABLE IF EXISTS " + COMMON_TABLE_NAME);
+        db.execSQL("DROP TABLE IF EXISTS " + BRAND_NEW_COMMON_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + PRESENT_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + SECOND_DAY_TABLE_NAME);
         db.execSQL("DROP TABLE IF EXISTS " + THIRD_DAY_TABLE_NAME);

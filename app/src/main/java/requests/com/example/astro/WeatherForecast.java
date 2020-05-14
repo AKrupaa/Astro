@@ -37,15 +37,15 @@ public class WeatherForecast {
                         DBManager dbManager = new DBManager(context);
                         dbManager.open();
 
-                        if(UtilAstro.isCityExistInDB(fetchedCityID, context)) {
+                        if(UtilAstro.isCityExistInDB(fetchedCityID, dbManager)) {
                             // update
-                            dbManager.update(fetchedCityID, DatabaseHelper.COMMON_TABLE_NAME, common);
+                            dbManager.update(fetchedCityID, DatabaseHelper.BRAND_NEW_COMMON_TABLE_NAME, common);
                             dbManager.update(fetchedCityID, DatabaseHelper.PRESENT_TABLE_NAME, present);
                             dbManager.update(fetchedCityID, DatabaseHelper.SECOND_DAY_TABLE_NAME, secondDay);
                             dbManager.update(fetchedCityID, DatabaseHelper.THIRD_DAY_TABLE_NAME, thirdDay);
                         } else {
                             // add
-                            dbManager.insertToTable(DatabaseHelper.COMMON_TABLE_NAME, common);
+                            dbManager.insertToTable(DatabaseHelper.BRAND_NEW_COMMON_TABLE_NAME, common);
                             dbManager.insertToTable(DatabaseHelper.PRESENT_TABLE_NAME, present);
                             dbManager.insertToTable(DatabaseHelper.SECOND_DAY_TABLE_NAME, secondDay);
                             dbManager.insertToTable(DatabaseHelper.THIRD_DAY_TABLE_NAME, thirdDay);

@@ -15,10 +15,10 @@
         android:textSize="15sp"
         app:layout_constraintBottom_toTopOf="@+id/temperature"
         app:layout_constraintEnd_toStartOf="@+id/prettyIcon"
-        app:layout_constraintHorizontal_bias="0.234"
+        app:layout_constraintHorizontal_bias="0.189"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/prettyIcon"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.531" />
 
     <TextView
         android:id="@+id/fetchedTime"
@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@id/name"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.511" />
 
     <TextView
         android:id="@+id/coordLat"
@@ -66,10 +66,10 @@
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.117"
+        app:layout_constraintHorizontal_bias="0.204"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.189" />
+        app:layout_constraintVertical_bias="0.302" />
 
     <TextView
         android:id="@+id/textView"
@@ -117,10 +117,10 @@
         android:background="@drawable/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="@id/temperature"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintHorizontal_bias="0.645"
         app:layout_constraintStart_toEndOf="@+id/temperature"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.635" />
+        app:layout_constraintVertical_bias="0.759" />
 
     <TextView
         android:id="@+id/pressure"

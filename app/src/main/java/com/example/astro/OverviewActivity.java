@@ -56,7 +56,9 @@ public class OverviewActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         // dodaj fragmenty
-        myAdapter.addFragment(todayFragment.newInstance());
+        myAdapter.addFragment(TodayFragment.newInstance());
+        myAdapter.addFragment(TomorrowFragment.newInstance());
+        myAdapter.addFragment(DayAfterTomorrowFragment.newInstance());
         myViewPager2.setAdapter(myAdapter);
     }
 }

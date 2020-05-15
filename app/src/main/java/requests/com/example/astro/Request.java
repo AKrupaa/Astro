@@ -144,8 +144,6 @@ public class Request {
             String weatherDescription = weather.getString("description");
 
             //        http://openweathermap.org/img/w/04d.png
-            // TODO: pobranie zdjecia.
-//        https://stackoverflow.com/questions/41104831/how-to-download-an-image-by-using-volley/41112901
             String weatherIcon = weather.getString("icon");
 
             JSONObject wind = listObject.getJSONObject("wind");

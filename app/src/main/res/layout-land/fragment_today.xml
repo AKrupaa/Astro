@@ -5,26 +5,30 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/my_gradient_drawable"
-    tools:context=".todayFragment">
+    tools:context=".TodayFragment">
 
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
         android:gravity="left"
         android:lines="2"
         android:text="Jakas dluga miejscowosc"
+        android:textColor="@color/colorWhite"
 
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintHorizontal_bias="0.376"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fetchedTime"
         app:layout_constraintVertical_bias="0.01" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/fetchedTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,6 +42,8 @@
         app:layout_constraintVertical_bias="0.041" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/coordLat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -50,6 +56,8 @@
         app:layout_constraintVertical_bias="0.622" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/coordLon"
         android:layout_width="wrap_content"
         android:layout_height="19dp"
@@ -59,6 +67,8 @@
         app:layout_constraintTop_toBottomOf="@id/coordLat" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,10 +79,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.058"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/prettyIcon"
+        app:layout_constraintTop_toTopOf="@id/imageView"
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -87,6 +99,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/weatherMain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -101,6 +115,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/weatherDescription"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,12 +126,11 @@
         app:layout_constraintTop_toBottomOf="@id/weatherMain"
         app:layout_constraintVertical_bias="1.0" />
 
-    <ImageView
-        android:id="@+id/prettyIcon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/imageView"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
         android:layout_marginEnd="40dp"
-        android:background="@drawable/ic_launcher_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.914"
@@ -124,6 +139,8 @@
         app:layout_constraintVertical_bias="0.138" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/pressure"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
@@ -133,6 +150,8 @@
         app:layout_constraintVertical_bias="0.574" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -142,6 +161,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/windSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -151,6 +172,8 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:fontFamily="@font/maven_pro"
+        android:textColor="@color/colorWhite"
         android:id="@+id/windDeg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

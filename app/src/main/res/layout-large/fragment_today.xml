@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/my_gradient_drawable"
+    tools:context=".TodayFragment">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/maven_pro"
+        android:gravity="left"
+        android:lines="2"
+        android:text="Jakas dluga miejscowosc"
+        android:textColor="@color/colorWhite"
+
+        android:textSize="50sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.151"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fetchedTime"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/fetchedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:text="2020-05-18 09:00:00"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <TextView
+        android:id="@+id/coordLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="348dp"
+        android:fontFamily="@font/maven_pro"
+        android:text="Lat: x"
+        android:textColor="@color/colorWhite"
+        android:textSize="38sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/prettyIcon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/weatherMain"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284" />
+
+    <TextView
+        android:id="@+id/coordLon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:text="Lon: y"
+        android:textColor="@color/colorWhite"
+        android:textSize="38sp"
+        app:layout_constraintStart_toStartOf="@id/coordLat"
+        app:layout_constraintTop_toBottomOf="@id/coordLat" />
+
+    <TextView
+        android:id="@+id/temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/maven_pro"
+        android:text="14"
+        android:textColor="@color/colorWhite"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.101"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imageView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/maven_pro"
+        android:text="°C"
+        android:textColor="@color/colorWhite"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="@id/temperature"
+        app:layout_constraintEnd_toStartOf="@+id/prettyIcon"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@id/temperature"
+        app:layout_constraintTop_toTopOf="@id/temperature"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/weatherMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:gravity="center"
+        android:text="Clouds"
+        android:textColor="@color/colorWhite"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/prettyIcon"
+        app:layout_constraintHorizontal_bias="0.006"
+        app:layout_constraintStart_toStartOf="@id/temperature"
+        app:layout_constraintTop_toBottomOf="@id/temperature"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/weatherDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:text="broken clouds"
+        android:textColor="@color/colorWhite"
+        android:textSize="40sp"
+        app:layout_constraintStart_toStartOf="@id/weatherMain"
+        app:layout_constraintTop_toBottomOf="@id/weatherMain"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/imageView"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginEnd="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
+        app:layout_constraintStart_toEndOf="@+id/temperature"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.295" />
+
+    <TextView
+        android:id="@+id/pressure"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:text="Pressure: xyz"
+        android:textColor="@color/colorWhite"
+        android:textSize="38sp"
+        app:layout_constraintStart_toStartOf="@id/coordLon"
+        app:layout_constraintTop_toBottomOf="@id/coordLon"
+        app:layout_constraintVertical_bias="0.574" />
+
+    <TextView
+        android:id="@+id/humidity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:text="Humidity: 48"
+        android:textColor="@color/colorWhite"
+        android:textSize="38sp"
+        app:layout_constraintStart_toStartOf="@id/pressure"
+        app:layout_constraintTop_toBottomOf="@id/pressure"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/windSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:text="Wind speed: 3.23"
+        android:textColor="@color/colorWhite"
+        android:textSize="38sp"
+        app:layout_constraintStart_toStartOf="@id/humidity"
+        app:layout_constraintTop_toBottomOf="@id/humidity"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/windDeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/maven_pro"
+        android:text="Wind deg: 254"
+        android:textColor="@color/colorWhite"
+        android:textSize="38sp"
+        app:layout_constraintStart_toStartOf="@id/windSpeed"
+        app:layout_constraintTop_toBottomOf="@id/windSpeed"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

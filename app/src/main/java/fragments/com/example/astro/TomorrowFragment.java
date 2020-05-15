@@ -152,10 +152,10 @@ public class TomorrowFragment extends Fragment {
         tWeatherMain.setText(weatherMain);
         tWeatherDescription.setText(weatherDescription);
 
-        tPressure.setText(String.format("Pressure %d", pressure));
-        tHumidity.setText(String.format("Humidity %d", humidity));
-        tWindSpeed.setText(String.format("Wind speed %d", windSpeed));
-        tWindDeg.setText(String.format("Wind degree %d", windDeg));
+        tPressure.setText(String.format("Pressure %d hPa", pressure));
+        tHumidity.setText(String.format("Humidity %d %%", humidity));
+        tWindSpeed.setText(String.format("Wind speed %d meter/s", windSpeed));
+        tWindDeg.setText(String.format("Wind degree %d°", windDeg));
 
         loadImage(weatherIcon);
     }

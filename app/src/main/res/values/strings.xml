@@ -8,7 +8,7 @@
     <string name="latitude">Szerokość geograficzna</string>
     <string name="hintlongitude">dlugosc geograficzna</string>
     <string name="hintLatitude">szerokosc geograficzna</string>
-    <string name="hintCity">miasto</string>
+    <string name="hintCity">wprowadź miasto</string>
     <string name="confirm">Zatwierdź</string>
 
     <string name="timeBetweenCalculations">Czas pomiędzy obliczeniami</string>

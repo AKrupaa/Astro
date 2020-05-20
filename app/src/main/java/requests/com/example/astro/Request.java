@@ -42,7 +42,8 @@ public class Request {
             @Override
             public void onErrorResponse(VolleyError error) {
 //                Toast.makeText(context, "Error 404, sprawdz polaczenie lub wprowadzone dane", Toast.LENGTH_LONG).show();
-                Log.e("Request.java", error.getCause().toString());
+//                Log.e("Request.java", error.getCause().toString());
+                Toast.makeText(context, "404", Toast.LENGTH_SHORT).show();
                 volleyCallback.onFailedResponse();
             }
         });

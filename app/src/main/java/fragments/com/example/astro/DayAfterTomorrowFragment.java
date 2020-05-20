@@ -1,5 +1,6 @@
 package com.example.astro;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -128,6 +129,7 @@ public class DayAfterTomorrowFragment extends Fragment {
         imageView = (NetworkImageView) v.findViewById(R.id.imageView);
     }
 
+    @SuppressLint("DefaultLocale")
     private void settingTexts() {
         tName.setText(String.format("%s, %s", name, country));
         tFetchedTime.setText(timeText);

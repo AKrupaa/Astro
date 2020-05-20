@@ -1,8 +1,6 @@
 package com.example.astro;
 
 import android.content.ContentValues;
-import android.os.Parcel;
-import android.os.Parcelable;
 
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -14,6 +12,9 @@ public class SharedViewModel extends ViewModel implements Serializable {
     private MutableLiveData<ContentValues> present = new MutableLiveData<ContentValues>();
     private MutableLiveData<ContentValues> secondDay = new MutableLiveData<ContentValues>();
     private MutableLiveData<ContentValues> thirdDay = new MutableLiveData<ContentValues>();
+
+    // only in OverviewActivity
+    private MutableLiveData<Astronomy> astronomyMutableLiveData = new MutableLiveData<Astronomy>();
 
     public SharedViewModel() {
     }
@@ -48,5 +49,15 @@ public class SharedViewModel extends ViewModel implements Serializable {
 
     public void setThirdDay(ContentValues contentValues) {
         thirdDay.setValue(contentValues);
+    }
+
+    // only in OverviewActivity
+
+    public Astronomy getAstronomyMutableLiveData() {
+        return astronomyMutableLiveData.getValue();
+    }
+
+    public void setAstronomyMutableLiveData(Astronomy astronomyMutableLiveData) {
+        this.astronomyMutableLiveData.setValue(astronomyMutableLiveData);
     }
 }

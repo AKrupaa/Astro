@@ -1,4 +1,3 @@
-
 package com.example.astro;
 import com.astrocalculator.AstroCalculator;
 import com.astrocalculator.AstroDateTime;
@@ -54,10 +53,10 @@ public class Astronomy implements Serializable {
 //        Function returns time of civil evening twilight for specific date and location
         String twilightEvening = sunAstroInfo.getTwilightEvening().toString();
 
-        arrayList.add("Wschód słońca: " + sunRise);
-        arrayList.add("Azymut: "+ azimuthRise);
-        arrayList.add("Zachód słońca: " + sunSet);
-        arrayList.add("Azymut: " + azimuthSet);
+        arrayList.add("Time of sunrise: " + sunRise);
+        arrayList.add("Azimuth of sunrise: "+ azimuthRise);
+        arrayList.add("Time of sunset: " + sunSet);
+        arrayList.add("Azimuth of sunset: " + azimuthSet);
         arrayList.add("Civil morning twilight: " +  twilightMorning);
         arrayList.add("Civil evening twilight: " + twilightEvening);
 
@@ -121,13 +120,13 @@ public class Astronomy implements Serializable {
 //        long synodicMonthDay = synodicMonthDayCalculator(nextNewMoon/*, yearNextMoon, monthNextMoon, dayNextMoon*/);
         long synodicMonthDay = timeDifferenceMilliseconds / (60 * 60 * 1000 * 24);
 
-        arrayList.add("Wschód księżyca: " + moonRise);
-        arrayList.add("Zachód księżyca: " + moonSet);
-        arrayList.add("Najbliższy nów: " + nextNewMoon);
-        arrayList.add("Najbliższa pełnia: " + fullMoon);
-        arrayList.add("Faza księżyca: " + moonIllumination);
+        arrayList.add("Time of moonrise: " + moonRise);
+        arrayList.add("Time of moonset: " + moonSet);
+        arrayList.add("Time of next new moon phase: " + nextNewMoon);
+        arrayList.add("Time of next full moon phase: " + fullMoon);
+        arrayList.add("Moon illumination: " + moonIllumination);
 
-        arrayList.add("Dzień miesiąca synodycznego: " + synodicMonthDay);
+        arrayList.add("Synodic month day: " + synodicMonthDay);
 
         return arrayList;
     }

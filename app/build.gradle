@@ -23,7 +23,7 @@ android {
     sourceSets {
         main {
             java {
-                srcDirs 'src/main/java', 'src/main/java/activities', 'src/main/java/fragments', 'src/main/java/requests', 'src/main/java/database', 'src/main/java/ViewModels', 'src/main/java/com.example.astro/fragments', 'src/main/java/viewModels'
+                srcDirs 'src/main/java', 'src/main/java/activities', 'src/main/java/fragments', 'src/main/java/requests', 'src/main/java/database', 'src/main/java/ViewModels', 'src/main/java/com.example.astro/fragments', 'src/main/java/viewModels', 'src/main/java/Calculations'
             }
         }
     }
